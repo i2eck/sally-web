@@ -12,7 +12,7 @@ import {
   Users,
   Church,
 } from 'lucide-react'
-import { EVENT, TICKET_TYPES } from '@/lib/fixtures'
+import { EVENT, MOBILE_MONEY_NUMBERS, TICKET_TYPES } from '@/lib/fixtures'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -161,6 +161,19 @@ function Home() {
                 Pay cash or mobile money. You get a digital ticket with a QR code (often via
                 WhatsApp).
               </p>
+              <div className="mt-3 rounded-lg border border-[#c99b39]/60 bg-white/60 p-3 text-left">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-[#8b5a18]">
+                  Mobile money
+                </p>
+                <ul className="mt-1 space-y-0.5">
+                  {MOBILE_MONEY_NUMBERS.map((m) => (
+                    <li key={m.number} className="text-sm text-[#2a0c38]">
+                      <span className="font-mono font-semibold">{m.number}</span>{' '}
+                      <span className="text-[#5c3d4a]">— {m.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="text-center">
               <div className="mx-auto w-14 h-14 rounded-full bg-[#2a0c38] text-[#e6bd65] flex items-center justify-center mb-4">
